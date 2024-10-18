@@ -6,6 +6,9 @@ import {anyValue} from "@nomicfoundation/hardhat-chai-matchers/withArgs";
 import {expect} from "chai";
 import {ethers, upgrades} from "hardhat";
 
+const DAI = "0x6B175474E89094C44Da98b954EedeAC495271d0F";
+const WETH9 = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2";
+
 describe("Lock", function () {
   async function deployDexFixture() {
     const [owner, otherAccount] = await ethers.getSigners();
@@ -36,9 +39,9 @@ describe("Lock", function () {
     it("The function should succeed", async function () {
       const {contract, owner} = await loadFixture(deployDexFixture);
 
-      await expect(contract.setSupportedTokens([WETH9, USDC], [true, false]))
+      await expect(contract.setSupportedTokens([WETH9, DAI], [true, false]))
         .to.emit(contract, "SupportedTokenUpdated")
-        .withArgs([WETH9, USDC], [true, false]); // We accept any value as `when` arg
+        .withArgs([WETH9, DAI], [true, false]); // We accept any value as `when` arg
     });
 
     it("The function should fail: wrong owner", async function () {
