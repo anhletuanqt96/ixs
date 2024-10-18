@@ -1,0 +1,22 @@
+{
+  "name": "hardhat-project",
+  "scripts": {
+    "bsc": "npx hardhat run --network bsctest scripts/UUPS.ts",
+    "amoy": "npx hardhat run --network amoy scripts/vic.ts"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^3.0.5",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@openzeppelin/hardhat-upgrades": "^3.0.2",
+    "ethers": "^6.10.0",
+    "hardhat": "^2.19.4"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.5",
+    "@openzeppelin/contracts-upgradeable": "^4.9.5",
+    "@stomp/stompjs": "^7.0.0",
+    "express": "^4.19.2",
+    "uuid": "^9.0.1",
+    "ws": "^8.17.0"
+  }
+}
